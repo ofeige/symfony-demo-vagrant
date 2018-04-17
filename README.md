@@ -8,7 +8,7 @@ This is a development environment for Symfony projects on a Debian based Vagrant
 
 | Software | Debian Jessie | Debian Stretch | Tested   |
 |----------|---------------|----------------|----------|
-| Debian   | 8.10          | 9.3            | &#10003; |
+| Debian   | 8.10          | 9.4            | &#10003; |
 | Nginx    | 1.12.2        | 1.12.2         | &#10003; |
 | MySQL    | 5.5.59        | -              | &#10003; |
 | MariaDB  | -             | 10.1.26        | &#10003; |
@@ -17,7 +17,7 @@ This is a development environment for Symfony projects on a Debian based Vagrant
 | PHPUnit  | 7.0.2         | 7.0.2          | &#10003; |
 | Composer | 1.6.3         | 1.6.3          | &#10003; |
 | Node.js  | 8.10.0        | 8.10.0         | &#10003; |
-| Symfony  | 4.0.6         | 4.0.6          | &#10003; |
+| Symfony  | 4.0.8         | 4.0.8          | &#10003; |
 
 ## Requirements
 
@@ -74,8 +74,8 @@ Check the config.yml if you want to modify the following settings.
 
 ```yaml
 configs:
-    os: "9.3"                       # Choose between 8.10 and 9.3 (change requires: vagrant destroy & vagrant up)
-    private_ip: "192.168.56.111"    # VM IP in your host-only-network
+    os: "9.4"                       # Choose between 8.10 and 9.4 (change requires: vagrant destroy & vagrant up)
+    private_ip: "192.168.56.111"    # VM IP in your host-only-network
     vmname: "symfony-development"   # VM name for Virtualbox
     servername: "lemp.test"         # Servername and domain for your projects
     projectnames:                   # Comma-separated list with your symfony projectnames (change requires: vagrant provision & vagrant hostmanager)
@@ -95,6 +95,19 @@ vagrant hostmanager
 Feel free to report issues, fork this project and submit pull requests.
 
 ## Changelog
+
+13 April 2018
+
+- Updated Ansible to version 2.5
+
+28 March 2018
+
+- Updated Debian to version 9.4
+
+23 March 2018
+
+- Improved the ansible installation to prevent breaking version changes
+- Disabled node-sass installation again
 
 12 March 2018
 
