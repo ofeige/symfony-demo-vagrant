@@ -10,8 +10,7 @@ This is a development environment for Symfony projects on a Debian based Vagrant
 |----------|---------------|----------------|----------|
 | Debian   | 8.10          | 9.4            | &#10003; |
 | Nginx    | 1.12.2        | 1.12.2         | &#10003; |
-| MySQL    | 5.5.59        | -              | &#10003; |
-| MariaDB  | -             | 10.1.26        | &#10003; |
+| MariaDB  | -             | 10.3           | &#10003; |
 | Redis    | 2.8.17        | 3.2.6          | &#10003; |
 | PHP      | 7.2           | 7.2            | &#10003; |
 | PHPUnit  | 7.0.2         | 7.0.2          | &#10003; |
@@ -95,6 +94,10 @@ vagrant hostmanager
 Feel free to report issues, fork this project and submit pull requests.
 
 ## Changelog
+
+16 May 2018
+
+- Update MariaDB to 10.3 (similar with MySQL 5.7)
 
 13 April 2018
 

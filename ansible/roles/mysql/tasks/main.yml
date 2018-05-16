@@ -1,11 +1,23 @@
 ##################################################
 ### Install and configure MySQL
-- name: Install Packages
-  apt:  
-    name: "{{ item }}"
+- name: Add Repo Key for MariaDB
+  apt_key:
+    keyserver: keyserver.ubuntu.com
+    id: "0xF1656F24C74CD1D8"
     state: present
+
+- name: Add Repo for 10.3
+  apt_repository:
+    repo: deb [arch=amd64,i386,ppc64el] http://mirror2.hs-esslingen.de/mariadb/repo/10.3/debian stretch main
+    update_cache: yes
+    state: present
+
+- name: Install Packages
+  apt:
+    name: "{{ item }}"
+    state: installed
   with_items:
-  - mysql-server
+  - mariadb-server
   - python-mysqldb
 
 - name: User Creation
