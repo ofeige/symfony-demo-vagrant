@@ -21,8 +21,8 @@ This is a development environment for Symfony projects on a Debian based Vagrant
 ## Requirements
 
 - Hypervisor
-  - Virtualbox >= 5.2.4
-  - Parallels >= 10
+  - Virtualbox >= 5.2.4 (do not use it with MacOS)
+  - Parallels >= 10 (use it with MacOS)
 - Vagrant >= 2.0.1
 - Vagrant Plugins:
   - vagrant-hostmanager # necessary for host entries
