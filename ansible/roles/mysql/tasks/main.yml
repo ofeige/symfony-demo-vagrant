@@ -1,23 +1,15 @@
 ##################################################
-### Install and configure MySQL
-- name: Add Repo Key for MariaDB
-  apt_key:
-    keyserver: keyserver.ubuntu.com
-    id: "0xF1656F24C74CD1D8"
-    state: present
-
-- name: Add Repo for 10.3
-  apt_repository:
-    repo: deb [arch=amd64,i386,ppc64el] http://mirror2.hs-esslingen.de/mariadb/repo/10.3/debian stretch main
-    update_cache: yes
-    state: present
+#
+# Install and configure MySQL or Percona
+#
 
 - name: Install Packages
   apt:
     name: "{{ item }}"
-    state: installed
+    state: present
   with_items:
-  - mariadb-server
+  - percona-server-server-5.7
+  - percona-server-client-5.7
   - python-mysqldb
 
 - name: User Creation

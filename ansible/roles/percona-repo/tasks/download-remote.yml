@@ -1,0 +1,20 @@
+---
+- name: Ensure ca-certificates package is present
+  apt:
+    name: ca-certificates
+    update_cache: yes
+    cache_valid_time: 3600
+    state: present
+  when: ansible_os_family == 'Debian'
+
+- name: Add Percona APT Repository
+  apt:
+    deb: "{{ percona_repo_url }}"
+  register: percona_repo_added
+  when: ansible_os_family == 'Debian'
+
+- name: Add Percona YUM Repository
+  yum:
+    name: "{{ percona_repo_url }}"
+    state: present
+  when: ansible_os_family == 'RedHat'

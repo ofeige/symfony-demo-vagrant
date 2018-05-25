@@ -1,0 +1,38 @@
+---
+- name: Generate random temp directory
+  command: mktemp -d "{{ percona_repo_temp_directory_mask }}"
+  become: no
+  delegate_to: localhost
+  changed_when: false
+  register: percona_repo_temp_dir
+
+- name: Download Percona Repo file
+  get_url:
+    url: "{{ percona_repo_url }}"
+    dest: "{{ percona_repo_temp_dir.stdout }}"
+    mode: '0644'
+  become: no
+  delegate_to: localhost
+  changed_when: false
+
+- name: Copy Percona Repo file to target host
+  copy:
+    src: "{{ percona_repo_temp_dir.stdout + '/' + percona_repo_file }}"
+    dest: /tmp/
+    force: yes
+    owner: root
+    group: root
+    mode: '0400'
+  changed_when: false
+
+- name: Add Percona APT Repository
+  apt:
+    deb: /tmp/{{ percona_repo_file }}
+  register: percona_repo_added
+  when: ansible_os_family == 'Debian'
+
+- name: Add Percona YUM Repository
+  yum:
+    name: /tmp/{{ percona_repo_file }}
+    state: present
+  when: ansible_os_family == 'RedHat'

@@ -1,0 +1,9 @@
+---
+percona_repo_deb_file: percona-release_{{ percona_repo_version }}-{{ percona_repo_review }}.{{ ansible_distribution_release | lower }}_all.deb
+percona_repo_rpm_file: percona-release-{{ percona_repo_version }}-{{ percona_repo_review }}.noarch.rpm
+
+percona_repo_apt_url: https://repo.percona.com/apt/{{ percona_repo_deb_file }}
+percona_repo_yum_url: https://www.percona.com/downloads/percona-release/redhat/{{ percona_repo_version }}-{{ percona_repo_review }}/{{ percona_repo_rpm_file }}
+
+percona_repo_file: "{{ (ansible_os_family == 'RedHat') | ternary(percona_repo_rpm_file, percona_repo_deb_file) }}"
+percona_repo_url: "{{ (ansible_os_family == 'RedHat') | ternary(percona_repo_yum_url, percona_repo_apt_url) }}"

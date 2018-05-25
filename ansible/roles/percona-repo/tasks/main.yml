@@ -1,0 +1,11 @@
+---
+- include_tasks: download-remote.yml
+  when: not percona_repo_download_local
+
+- include_tasks: download-local.yml
+  when: percona_repo_download_local
+
+- name: Update APT cache
+  apt:
+    update_cache: yes
+  when: ansible_os_family == 'Debian' and percona_repo_added is defined and percona_repo_added | changed

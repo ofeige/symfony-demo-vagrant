@@ -1,0 +1,32 @@
+---
+dependencies: []
+
+galaxy_info:
+  author: gcoop-libre
+  description: Percona APT repositories for Debian/Ubuntu
+  company: gcoop Cooperativa de Software Libre
+  license: GPLv2
+  min_ansible_version: 2.4
+  platforms:
+    - name: Debian
+      versions:
+        - all
+    - name: Ubuntu
+      versions:
+        - all
+    - name: EL
+      versions:
+        - all
+    - name: CentOS
+      versions:
+        - all
+    - name: RedHat
+      versions:
+        - all
+    - name: Fedora
+      versions:
+        - all
+  galaxy_tags:
+    - mysql
+    - percona
+    - apt

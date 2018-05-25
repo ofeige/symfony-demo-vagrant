@@ -1,0 +1,6 @@
+---
+percona_repo_version: 0.1
+percona_repo_review: 5
+
+percona_repo_download_local: False
+percona_repo_temp_directory_mask: /tmp/percona_repo.XXXXXXXXXX
