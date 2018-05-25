@@ -94,6 +94,9 @@ vagrant hostmanager
 Feel free to report issues, fork this project and submit pull requests.
 
 ## Changelog
+25 May 2018
+
+- Update to install Percona Version of MySQL instead of MariaDB
 
 16 May 2018
 
