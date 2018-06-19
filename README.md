@@ -94,6 +94,10 @@ vagrant hostmanager
 Feel free to report issues, fork this project and submit pull requests.
 
 ## Changelog
+19 June 2018
+
+- add ansible role for yarn js packes manager
+
 25 May 2018
 
 - Update to install Percona Version of MySQL instead of MariaDB
