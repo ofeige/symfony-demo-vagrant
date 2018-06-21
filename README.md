@@ -31,19 +31,19 @@ This is a development environment for Symfony projects on a Debian based Vagrant
 
 ## Getting started
 
-1. git clone https://github.com/neikei/vagrant-debian-ansible-lemp.git
-2. cd vagrant-debian-ansible-lemp
+1. git clone https://github.com/ofeige/symfony-demo-vagrant.git
+2. cd vagrant-debian-vagrant
 3. vagrant up --provider=virtualbox OR vagrant up --provider=parallels
 4. ... wait ...
-5. Check the initial webpage: http://lemp.test/
+5. Check the initial webpage: http://demo.test/
 
 ## Default access
 
-- Default project: http://lemp.test/
+- Default project: http://demo.test/
 - Default web root: /vagrant/web
-- Symfony projects: http://example.lemp.test
+- Symfony projects: http://example.demo.test
 - Symfony web root: /vagrant/example
-- MySQL: 192.168.56.111:3306
+- MySQL: 192.168.56.127:3306
   - user: admin
   - password: changeme
   - root is allowed to access the database from localhost without a password
