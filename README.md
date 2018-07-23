@@ -2,7 +2,9 @@
 
 [![Build Status](https://travis-ci.org/neikei/vagrant-debian-ansible-lemp.svg?branch=master)](https://travis-ci.org/neikei/vagrant-debian-ansible-lemp)
 
-This is a development environment for Symfony projects on a Debian based Vagrantbox.
+This is a simple custimized version of the [standard vagrant box](https://github.com/ofeige/vagrant-debian-ansible-lemp) for development environment of Symfony projects on a Debian based Vagrantbox.
+
+This vagrant box ist for running https://github.com/ofeige/symfony-demo-api and https://github.com/ofeige/symfony-demo-ui. Please for further information the README in on of the projects!
 
 ## Included components
 
@@ -41,7 +43,7 @@ This is a development environment for Symfony projects on a Debian based Vagrant
 
 - Default project: http://demo.test/
 - Default web root: /vagrant/web
-- Symfony projects: http://example.demo.test
+- Symfony projects: http://ui.demo.test or http://ui.demo.test
 - Symfony web root: /vagrant/example
 - MySQL: 192.168.56.127:3306
   - user: admin
